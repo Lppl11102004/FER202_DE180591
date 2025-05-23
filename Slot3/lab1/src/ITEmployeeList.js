@@ -6,40 +6,25 @@ const employees = [
   { id: 3, name: "Clara", department: "Finance", age: 19 },
   { name: "Ann", department: "Finance", age: 22 },
   { name: "Elisabeth", department: "HR", age: 16 },
-  { name: "Tom", department: "IT", age: 33 },
-  { name: "Aaron", department: "Finance", age: 27 }
+  { name: "Tom", department: "IT", age: 33 }
 ];
 
-const GroupedEmployeeList = () => {
-  
-  const grouped = employees.reduce((groups, employee) => {
-    const dept = employee.department;
-    if (!groups[dept]) {
-      groups[dept] = [];
-    }
-    groups[dept].push(employee);
-    return groups;
-  }, {}); 
+const ITEmployeeList = () => {
 
-
-  const departments = Object.entries(grouped); 
+  const itEmployees = employees.filter(emp => emp.department === "IT");
 
   return (
     <div>
-      <h2>Employees by Department</h2>
-      {departments.map(([department, empList]) => (
-        <div key={department}>
-          <h3>{department}</h3>
-          <ul>
-            {empList.map((employee, index) => {
-              const key = employee.id || index;
-              return <li key={key}>{employee.name}</li>;
-            })}
-          </ul>
-        </div>
-      ))}
+      <h2>IT Department Employees</h2>
+      <ul>
+        {itEmployees.map((employee, index) => {
+          const { id, name } = employee;
+          const key = id || index;
+          return <li key={key}>{name}</li>;
+        })}
+      </ul>
     </div>
   );
 };
 
-export default GroupedEmployeeList;
+export default ITEmployeeList;

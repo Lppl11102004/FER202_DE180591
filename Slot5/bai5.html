@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .student-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+        }
+        .student-img {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .footer {
+    background-color: #f37021;
+    color: white;
+    padding: 30px 0;
+    width: 100vw; /* chiếm toàn bộ chiều ngang màn hình */
+    margin-left: calc(-50vw + 50%); /* căn lề trái để tràn hẳn */
+}
+.footer a {
+    color: white;
+    margin: 0 10px;
+}
+.orange-header {
+    background-color: #f37021;
+    padding: 20px 0;
+}
+.orange-header img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <div class="navbar-brand">
+        <img src="image/Logo_FPT_Education.png" alt="Logo" style="height:30px;">
+        <a href="#">Trang chủ</a> |
+        <a href="#">Ngành học</a> |
+        <a href="#">Tuyển sinh</a> |
+        <a href="#">Sinh viên</a>
+    </div>
+    <form class="form-inline">
+        <input class="form-control" type="search" placeholder="Search">
+    </form>
+</nav>
+
+<!-- Banner -->
+<div class="orange-header text-center">
+    <img src="image/anh2.jpg" alt="Banner">
+</div>
+
+<!-- Breadcrumb -->
+<div class="container mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Students</li>
+        </ol>
+    </nav>
+
+    <!-- Students Detail -->
+<h3 class="text-center mb-4">Students Detail</h3>
+
+<!-- Row 1: Student 1 & 2 -->
+<div class="row">
+    <!-- Student 1 -->
+    <div class="col-md-6">
+        <div class="student-card">
+            <img src="image/12fd6ce7-6b92-4d39-bde4-8c78a741f515.jpg" class="student-img" alt="Student Image">
+            <p class="mt-2 mb-1"><strong>Nguyễn Văn Hoàng Long</strong></p>
+            <p>DE180597597 | Đà Nẵng</p>
+            <div>
+                <input type="radio" name="att1"> Absent
+                <input type="radio" name="att1"> Present
+            </div>
+            <button class="btn btn-warning mt-2">Submit</button>
+        </div>
+    </div>
+
+    <!-- Student 2 -->
+    <div class="col-md-6">
+        <div class="student-card">
+            <img src="image/90ed514b-b25d-4699-b430-ffad6bc32fb1.jpg" class="student-img" alt="Student Image">
+            <p class="mt-2 mb-1"><strong>Nguyễn Hữu Hoàng Vũ</strong></p>
+            <p>DE180587 | Kon Tum</p>
+            <div>
+                <input type="radio" name="att2"> Absent
+                <input type="radio" name="att2"> Present
+            </div>
+            <button class="btn btn-warning mt-2">Submit</button>
+        </div>
+    </div>
+</div>
+
+<!-- Row 2: Student 3 & 4 -->
+<div class="row">
+    <!-- Student 3 -->
+    <div class="col-md-6">
+        <div class="student-card">
+            <img src="image/18021cd2-dfba-492f-ae54-bb82d15b151f.jpg" class="student-img" alt="Student Image">
+            <p class="mt-2 mb-1"><strong>Đinh Xuân Thịnh</strong></p>
+            <p>DE180563 | Quảng Nam</p>
+            <div>
+                <input type="radio" name="att3"> Absent
+                <input type="radio" name="att3"> Present
+            </div>
+            <button class="btn btn-warning mt-2">Submit</button>
+        </div>
+    </div>
+
+    <!-- Student 4 -->
+    <div class="col-md-6">
+        <div class="student-card">
+            <img src="image/c07fa4a7-1d64-4032-b68f-26b2ea342a4f.jpg" class="student-img" alt="Student Image">
+            <p class="mt-2 mb-1"><strong>Nguyễn Tiến Đạt</strong></p>
+            <p>DE180603 | Quảng Bình</p>
+            <div>
+                <input type="radio" name="att4"> Absent
+                <input type="radio" name="att4"> Present
+            </div>
+            <button class="btn btn-warning mt-2">Submit</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="mt-5" style="background-color: #f37021; color: white; width: 100vw; margin-left: calc(-50vw + 50%);">
+    <div class="container py-4">
+        <div class="row">
+            <!-- Address -->
+            <div class="col-md-6">
+                <p><strong>Our Address</strong><br>
+                    Khu đô thị FPT Đà Nẵng<br>
+                    📞 04036321111<br>
+                    📠 +852 3765 4121<br>
+                    ✉️ fpt.edu@fpt.edu.vn
+                </p>
+            </div>
+            <!-- Social Icons -->
+            <div class="col-md-6 text-md-right d-flex align-items-center justify-content-md-end justify-content-start mt-3 mt-md-0">
+                <a href="#" class="text-white mx-2"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <hr style="border-top: 1px solid white;">
+        <div class="text-center">
+            &copy; Copyright 2023
+        </div>
+    </div>
+</footer>
+
+
+<!-- FontAwesome & Bootstrap JS -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

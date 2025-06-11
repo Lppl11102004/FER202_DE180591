@@ -9,8 +9,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import StudentCard from "./components/StudentCard"; // Import StudentCard component
 
 function App() {
-  const userData = { name: "traltb@fe.edu.vn", age: 39 };
-  const namesList = ["traltb@fe.edu.vn", "test@fe.edu.vn"];
+  const userData = { name: "lamlpp@fe.edu.vn", age: 21 };
+  const namesList = ["lamlpp@fe.edu.vn", "test@fe.edu.vn"];
   //Danh sach students
   const students = [
     { name: "Long@fe.edu.vn", age: 21, avatar: "/images/student1.jpg" },

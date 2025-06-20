@@ -1,4 +1,3 @@
-// src/Lab3/QuizApp.js
 import React, { Component } from 'react';
 import Question from './Question';
 import Score from './Score';

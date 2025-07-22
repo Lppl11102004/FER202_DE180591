@@ -1,58 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { Container, Button } from "react-bootstrap";
-import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+// src/components/LaptopDetail.js
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Button, Alert } from 'react-bootstrap';
+import axios from 'axios';
 
 const LaptopDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [laptop, setLaptop] = useState(null);
   const [notFound, setNotFound] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/Laptops/${id}`)
-      .then((res) => {
-        if (res.data) {
-          setLaptop(res.data);
-          setNotFound(false);
-        } else {
-          setNotFound(true);
-        }
-      })
+    axios.get(`http://localhost:3001/Laptops/${id}`)
+      .then(res => setLaptop(res.data))
       .catch(() => setNotFound(true));
   }, [id]);
 
   if (notFound) {
-    return (
-      <Container className="mt-5">
-        <h3>404 Not Found</h3>
-        <p>The laptop you are looking for does not exist.</p>
-        <Button variant="secondary" onClick={() => navigate("/laptops")}>
-          Back to Laptop List
-        </Button>
-      </Container>
-    );
+    return <Alert variant="danger">404 - Laptop not found</Alert>;
   }
 
-  if (!laptop) {
-    return (
-      <Container className="mt-5">
-        <p>Loading...</p>
-      </Container>
-    );
-  }
+  if (!laptop) return <p>Loading...</p>;
 
   return (
-    <Container className="mt-5">
-      <h2>{laptop.brand} {laptop.model}</h2>
-      <img src={laptop.image} alt={laptop.model} style={{ maxWidth: "300px" }} />
-      <p><strong>Year:</strong> {laptop.year}</p>
-      <p><strong>Price:</strong> {laptop.price}</p>
-      <p><strong>Description:</strong> {laptop.description}</p>
-      <Button variant="secondary" onClick={() => navigate("/laptops")}>
-        Back to Laptop List
-      </Button>
-    </Container>
+    <Card className="mx-auto" style={{ maxWidth: '600px' }}>
+      <Card.Img variant="top" src={laptop.image} style={{ maxHeight: '300px', objectFit: 'contain' }} />
+      <Card.Body>
+        <Card.Title>{laptop.brand} {laptop.model}</Card.Title>
+        <Card.Text>
+          <strong>Year:</strong> {laptop.year} <br />
+          <strong>Price:</strong> {laptop.price} <br />
+          <strong>Description:</strong> {laptop.description || 'No description available.'}
+        </Card.Text>
+        <Button variant="primary" onClick={() => navigate('/laptops')}>
+          Back to Laptop List
+        </Button>
+      </Card.Body>
+    </Card>
   );
 };
 

@@ -29,7 +29,7 @@ const EditProduct = () => {
     }
   }, [product]);
 
-  if (!product) return <p>Product not found</p>;
+  if (!product) return <p className="text-white">Product not found</p>;
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -40,52 +40,100 @@ const EditProduct = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <h2 className="text-center mb-4 text-danger">Edit Product</h2>
+    <div className="bg-dark min-vh-100 d-flex justify-content-center py-5">
+      <div style={{ width: '100%', maxWidth: '1000px', padding: '20px' }}>
+        <h2 className="text-center mb-4 text-white">Edit Product</h2>
 
-      <form onSubmit={handleSubmit} className="row g-3 align-items-center">
-        <div className="col-md-2 text-end">
-          <label htmlFor="name" className="col-form-label">Name:</label>
-        </div>
-        <div className="col-md-4">
-          <input id="name" name="name" value={form.name} onChange={handleChange} required className="form-control" />
-        </div>
+        <form onSubmit={handleSubmit}>
+          {/* Name */}
+          <div className="mb-3 d-flex align-items-center">
+            <label htmlFor="name" className="form-label text-white me-5" style={{ minWidth: '130px' }}>
+              Name:
+            </label>
+            <input
+              id="name"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="form-control flex-grow-1"
+            />
+          </div>
 
-        <div className="col-md-2 text-end">
-          <label htmlFor="description" className="col-form-label">Description:</label>
-        </div>
-        <div className="col-md-4">
-          <input id="description" name="description" value={form.description} onChange={handleChange} required className="form-control" />
-        </div>
+          {/* Description */}
+          <div className="mb-3 d-flex align-items-center">
+            <label htmlFor="description" className="form-label text-white me-5" style={{ minWidth: '130px' }}>
+              Description:
+            </label>
+            <input
+              id="description"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              required
+              className="form-control flex-grow-1"
+            />
+          </div>
 
-        <div className="col-md-2 text-end">
-          <label htmlFor="price" className="col-form-label">Original Price:</label>
-        </div>
-        <div className="col-md-4">
-          <input id="price" name="price" value={form.price} onChange={handleChange} required className="form-control" />
-        </div>
+          {/* Original Price */}
+          <div className="mb-3 d-flex align-items-center">
+            <label htmlFor="price" className="form-label text-white me-5" style={{ minWidth: '130px' }}>
+              Original Price:
+            </label>
+            <input
+              id="price"
+              name="price"
+              value={form.price}
+              onChange={handleChange}
+              required
+              className="form-control flex-grow-1"
+            />
+          </div>
 
-        <div className="col-md-2 text-end">
-          <label htmlFor="currentPrice" className="col-form-label">Current Price:</label>
-        </div>
-        <div className="col-md-4">
-          <input id="currentPrice" name="currentPrice" value={form.currentPrice} onChange={handleChange} required className="form-control" />
-        </div>
+          {/* Current Price */}
+          <div className="mb-3 d-flex align-items-center">
+            <label htmlFor="currentPrice" className="form-label text-white me-5" style={{ minWidth: '130px' }}>
+              Current Price:
+            </label>
+            <input
+              id="currentPrice"
+              name="currentPrice"
+              value={form.currentPrice}
+              onChange={handleChange}
+              required
+              className="form-control flex-grow-1"
+            />
+          </div>
 
-        <div className="col-md-2 text-end">
-          <label htmlFor="image" className="col-form-label">Image PNG filename:</label>
-        </div>
-        <div className="col-md-4">
-          <input id="image" name="image" value={form.image} onChange={handleChange} className="form-control" />
-        </div>
+          {/* Image */}
+          <div className="mb-3 d-flex align-items-center">
+            <label htmlFor="image" className="form-label text-white me-5" style={{ minWidth: '130px' }}>
+              Image PNG filename:
+            </label>
+            <input
+              id="image"
+              name="image"
+              value={form.image}
+              onChange={handleChange}
+              className="form-control flex-grow-1"
+            />
+          </div>
 
-        <div className="col-md-6 offset-md-2">
-          <button type="submit" className="btn btn-primary mt-3">Save</button>
-          <button type="button" onClick={() => navigate(-1)} className="btn btn-secondary mt-3 ms-3">
-            Cancel
-          </button>
-        </div>
-      </form>
+          {/* Buttons */}
+          <div className="d-flex justify-content-center mt-4">
+            <button type="submit" className="btn btn-danger me-5 px-4">
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/')}
+              className="btn btn-primary px-4"
+            >
+              Back Home
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
